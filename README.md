@@ -61,6 +61,76 @@ smart-home-pm/
 | jtbd-and-journey-map.md | JTBD三层结构、用户旅程触点、关键时刻 | 需求分析、MVP定义 |
 | icon-catalog.md | 图标分类索引、命名建议、设计规范 | 产品原型规划、演示材料准备 |
 
+---
+
+## 安装
+
+### 方式一：Claude Code Plugin（推荐，最快）
+
+```bash
+# 在 Claude Code 中输入
+/plugin marketplace add xgpeter/smart-home-pm
+```
+
+安装后自动激活，输入 `帮我写一份智能门锁的 PRD` 即可使用。
+
+### 方式二：手动安装（Claude Code）
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/xgpeter/smart-home-pm.git
+
+# 2. 在项目的 CLAUDE.md 中添加引用
+# 编辑你项目的 CLAUDE.md，加入以下内容：
+```
+
+```markdown
+# 在项目 CLAUDE.md 中添加：
+
+## 技能
+- 智能家居 PM 技能：参考 smart-home-pm/SKILL.md
+- 触发：涉及智能家居产品规划、PRD撰写、技术选型时自动使用
+```
+
+```bash
+# 3. 重启 Claude Code，技能自动生效
+```
+
+### 方式三：Claude Desktop / Claude.ai
+
+1. 下载 [最新 Release](https://github.com/xgpeter/smart-home-pm/releases) 中的 `smart-home-pm.zip`
+2. Claude Desktop：设置 → Skills → Upload → 选择 ZIP 文件
+3. Claude.ai：设置 → Project Knowledge → Upload → 选择 ZIP 或直接上传核心文档
+
+### 方式四：Claude Agent SDK
+
+```javascript
+// 在 Agent SDK 中注册技能
+import { Claude } from '@anthropic-ai/sdk';
+
+const agent = new Claude({
+  skills: [
+    {
+      name: 'smart-home-pm',
+      path: './smart-home-pm/SKILL.md',
+      type: 'project',
+    },
+  ],
+});
+```
+
+### 验证安装
+
+安装后输入以下内容确认技能已激活：
+
+```
+帮我列出智能家居十大品类
+```
+
+如果返回了设备品类大全的内容（照明/安防/环境/家电/影音/遮阳/健康/网关/园艺/宠物），说明安装成功。
+
+---
+
 ## 使用方式
 
 ### 技能触发词
