@@ -1,0 +1,34 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# Markdown files
+*.md diff=markdown text eol=lf
+
+# JSON files
+*.json diff=json text eol=lf
+
+# YAML files
+*.yml diff=yaml text eol=lf
+*.yaml diff=yaml text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Image files (binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text
+
+# Documentation
+*.md text diff=markdown
+LICENSE text
+README.md text eol=lf
+CONTRIBUTING.md text eol=lf
+CHANGELOG.md text eol=lf
+CODE_OF_CONDUCT.md text eol=lf
