@@ -25,6 +25,7 @@ Thumbs.db
 # Build & Dist
 dist/
 build/
+*.zip
 *.log
 .cache/
 
